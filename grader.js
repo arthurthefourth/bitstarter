@@ -73,7 +73,6 @@ var responseToHTML = function(result, response) {
 
 	fs.writeFileSync(URLFILE, result);
 	fileToCheck = URLFILE;
-	console.log("Processing tags from URLFILE: " + fileToCheck);
 	processJSON();
     }
 };
