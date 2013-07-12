@@ -73,6 +73,7 @@ var responseToHTML = function(result, response) {
 
 	fs.writeFileSync(URLFILE, result);
 	fileToCheck = URLFILE;
+	console.log("Processing tags from URLFILE: " + fileToCheck);
 	processJSON();
     }
 };
@@ -91,7 +92,7 @@ if(require.main == module) {
         .parse(process.argv);
     var fileToCheck = "";
     if (program.url) {
-	restler.get("http://ebay.com").on('complete', responseToHTML);
+	restler.get(program.url).on('complete', responseToHTML);
     }
     else {
 	fileToCheck = program.file;
